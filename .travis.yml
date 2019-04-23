@@ -71,6 +71,9 @@ script:
   # Lint php files
   - find . -name \*.php -not -path './vendor/*' -exec php -l "{}" \;
 
+  # Show database structure
+  - if [[ "$DB" == 'mysql' ]]; then mysql -u root nc_autotest -e 'SHOW CREATE TABLE oc_twofactor_admin_codes;'; fi
+
   # Run unit/integration tests
   - ./vendor/bin/phpunit -c tests/phpunit.xml
 
