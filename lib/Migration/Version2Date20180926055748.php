@@ -57,6 +57,8 @@ class Version2Date20180926055748 extends SimpleMigrationStep {
 		$expiresCol = $codesTable->getColumn('expires');
 		$expiresCol->setNotnull(true);
 		$expiresCol->setDefault(0);
+		$idCol = $codesTable->getColumn('id');
+		$idCol->setAutoincrement(true);
 	}
 
 }
