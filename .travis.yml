@@ -23,6 +23,7 @@ branches:
   only:
   - master
   - "/^stable\\d+(\\.\\d+)?$/"
+  - tmp
 
 cache:
   directories:
